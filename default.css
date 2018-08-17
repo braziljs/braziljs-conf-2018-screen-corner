@@ -1,0 +1,285 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+h1, h2, .hl {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 2px;
+    /* font-weight: bold; */
+}
+
+.screen-corner {
+    height: 270px;
+    width: 100%;
+    background: #000;
+    border-bottom: solid 1px #000;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+.screen-corner h1 {
+    font-size: 4rem;
+    font-style: italic;
+}
+.screen-corner h2 {
+    font-size: 3rem;
+    width: auto;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #ff0;
+}
+
+.screen-corner a,.screen-corner a:visited {
+    color: #fff;
+    font-weight: bold;
+}
+
+.cur-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 3vh;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.btn-enable-magenta {}
+
+body[data-magenta="1"] .screen-corner {
+    background-color: magenta;
+}
+
+body[data-hide="1"] .screen-corner h1,
+body[data-hide="1"] .screen-corner h2 {
+    transform: translateY(-500px);
+}
+body[data-hide="1"] .screen-corner h3,
+body[data-hide="1"] .screen-corner h4 {
+    transform: translateY(500px);
+}
+
+.screen-corner h1,
+.screen-corner h2,
+.screen-corner h3,
+.screen-corner h4,
+.screen-corner div {
+    transition: transform linear .4s;
+}
+
+.options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 800px;
+    margin: auto;
+}
+
+.options-list li {
+    display: block;
+    background: #f0f0f0;
+    border: solid 1px #999;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all linear .2s;
+}
+
+.options-list li:hover {
+    /* background: #ddf; */
+    background: #7371ff;
+    color: #fff;
+}
+
+.text-input-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 340px;
+    width: 90%;
+    background: #d0d0d0;
+    border: solid 1px #999;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform linear .2s;
+}
+
+body[data-show-text-input="1"] .text-input-container {
+    transform: translateY(0);
+}
+body[data-show-text-input="1"] .options-list .clickable {
+    opacity: .4;
+    pointer-events: none;
+}
+
+.text-input-container input {
+    width: 90%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: solid 1px #909090;
+}
+
+.text-input-container textarea {
+    width: 90%;
+    height: 200px;
+}
+
+.btn-send-container {
+    text-align: right;
+    width: 90%;
+    margin: auto;
+}
+
+.btn-send-container>button {
+    padding: 20px;
+    border: solid 1px #999;
+    width: 120px;
+}
+
+.btn-cancel {
+    background: #f99;
+}
+.btn-send {
+    background: #9f9;
+}
+
+.screen-corner .user {
+    float: left;
+    margin: 20px;
+    transform: translateX(0);
+}
+.screen-corner .tweet {
+    transform: translateX(0);
+    transition: all linear .4s;
+}
+
+body[data-hide="1"] .screen-corner .user {
+    transform: translateX(-500px);
+}
+
+body[data-hide="1"] .screen-corner .tweet {
+    transform: translateX(200%);
+    opacity: 0;
+}
+
+.screen-corner .user [data-scribe="element:name"] {
+    display: none;
+}
+.screen-corner .interact {
+    display: none;
+}
+
+.wifi-name {
+    font-size: 30px;
+}
+
+/** TALK **/
+
+body[data-hide="1"] .screen-corner .talk-title {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+body[data-hide="1"] .screen-corner .speakers-container {
+    transform: translateY(150%);
+    opacity: 0;
+}
+.talk-title {
+    transition: all linear .2s;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.speakers-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all linear .2s !important;
+}
+.speaker-name {
+    margin-right: 20px;
+}
+
+.talk-time {
+    display: none;
+}
+.talk-container .speaker-pic {
+    width: 100px;
+    height: 100px;
+    border: solid 2px #ff0;
+    background-size: cover;
+    margin: 20px 20px 0 0;
+}
+
+.talks-list-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    height: 50%;
+    background: #222;
+    color: #fff;
+    border: solid 1px #999;
+    overflow: auto;
+    padding: 20px;
+    display: none;
+}
+
+.talks-list-container .talk-container {
+    margin: 10px 0;
+    padding-bottom: 20px;
+    background: #000;
+    padding: 10px;
+    cursor: pointer;
+}
+.talks-list-container .talk-container:hover {
+    outline: solid 1px #ff0;
+}
+.talks-list-container .talk-title {
+    font-size: 20px;
+}
+
+body[data-show-talks-list="1"] .talks-list-container {
+    display: block;
+}
+
+.talks-close-btn {
+    position: fixed;
+    top: calc( 50% - 10px);
+    right: calc( 10% - 10px);
+    width: 40px;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    border: solid 1px #fff;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

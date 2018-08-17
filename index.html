@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BrazilJS Screen Corners</title>
+
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <div class="screen-corner">
+        <div id="cur-content" class="cur-content"></div>
+    </div>
+    <div class="clickable btn-enable-magenta hl" id="btn-enable-magenta">Magenta</div>
+
+    <ul class="options-list">
+        <li class="clickable" data-kind="hashtag">#BrazilJS</li>
+        <li class="clickable" data-kind="newsletter">Assine a Newsletter</li>
+        <li class="clickable" data-kind="yt">Inscreva-se no canal do YouTube</li>
+        <li class="clickable" data-kind="social">Redes Sociais</li>
+        <li class="clickable" data-kind="live">Transmitindo ao vivo</li>
+        <li class="clickable" data-kind="coc">Código de Conduta</li>
+        <li class="clickable" data-kind="album">Album de figurinhas</li>
+        <li class="clickable" data-kind="store">Loja da BrazilJS</li>
+        <li class="clickable" data-kind="now">Você está assistindo</li>
+        <li class="clickable" data-kind="next">Assista a seguir</li>
+        <li class="clickable" data-kind="tt">Último Tweet da BrazilJS</li>
+        <li class="clickable" data-kind="txt">Texto</li>
+        <li class="clickable" data-kind="wifi">Wifi</li>
+        <li class="clickable" data-kind="clear">Limpar</li>
+    </ul>
+
+    <div class="text-input-container">
+        <input type="text" name="title" id="title" placeholder="Título" />
+        <textarea name="description" id="description" rows="10" placeholder="Descrição"></textarea>
+        <div class="btn-send-container">
+            <button class="btn-cancel">Cancelar</button>
+            <button class="btn-send">Enviar</button>
+        </div>
+    </div>
+
+    <div class="talks-list-container">
+        <div class="talks-close-btn">X</div>
+        <div class="list-container"></div>
+    </div>
+
+    <script src="twitter.js"></script>
+    <script src="conf-data.js"></script>
+    <script src="templates.js"></script>
+
+    <script src="default.js"></script>
+</body>
+</html>
