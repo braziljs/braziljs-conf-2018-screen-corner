@@ -95,7 +95,7 @@ body[data-hide="1"] .screen-corner h4 {
     border-radius: 10px;
     margin: 10px;
     width: 200px;
-    height: 100px;
+    height: 60px;
     float: left;
     display: flex;
     justify-content: center;
@@ -220,6 +220,7 @@ body[data-hide="1"] .screen-corner .speakers-container {
 }
 .speaker-name {
     margin-right: 20px;
+    font-size: 30px;
 }
 
 .talk-time {
